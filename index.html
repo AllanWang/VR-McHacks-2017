@@ -1,16 +1,78 @@
 <html>
 <head>
     <title>My A-Frame Scene</title>
-    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script src="aframe.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6/angular.min.js"></script>-->
     <script src="primitives/wall.js"></script>
 </head>
 <body>
-<a-scene scale="0.5 1 2">
-    <a-wall position="0 0 0"></a-wall>
-    <a-wall position="0 0 10"></a-wall>
-    <a-wall position="0 5 5" rotation="90 0 0"></a-wall>
-    <a-wall position="0 -5 5" rotation="90 0 0"></a-wall>
-    <a-sphere position="0 0 5" radius="1.5" color="#0ff"></a-sphere>
+<a-scene>
+    <!--bring forward into view at beginning-->
+    <a-entity position="0 0 -20">
+        <a-wall position="5 0 5" rotation="0 90 0"></a-wall>
+        <a-wall position="-5 0 5" rotation="0 90 0"></a-wall>
+        <a-wall position="0 5 5" rotation="90 0 0"></a-wall>
+        <a-wall position="0 -5 5" rotation="90 0 0"></a-wall>
+        <!--left right sphere-->
+        <a-sphere position="0 0 2" radius="1" color="white">
+            <a-animation
+                    attribute="position"
+                    callback="left"
+                    dur="750"
+                    from="0 0 2" to="-4 0 2">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="left"
+                    callback="right"
+                    dur="1500"
+                    from="-4 0 2" to="4 0 2">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="right"
+                    callback="left"
+                    dur="1500"
+                    from="4 0 2" to="-4 0 2">
+            </a-animation>
+        </a-sphere>
+        <a-sphere position="0 4 2" radius="1" color="white">
+            <a-animation
+                    attribute="position"
+                    callback="down"
+                    dur="1500"
+                    from="0 4 2" to="0 -4 2">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="up"
+                    callback="down"
+                    dur="1500"
+                    from="0 4 2" to="0 -4 2">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="down"
+                    callback="up"
+                    dur="1500"
+                    from="0 -4 2" to="0 4 2">
+            </a-animation>
+        </a-sphere>
+    </a-entity>
+
+    <!--<a-cylinder position="1 0.75 -3" radius="0.5" height="1" color="#FFC65D"></a-cylinder>-->
+    <!--<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>-->
+    <!--<a-plane position="0 2 -2" rotation="0 0 0" width="4" height="4" color="#ff00ff"></a-plane>-->
+    <!--<a-plane position="0 2 2" rotation="0 0 0" width="4" height="4" color="#ff00ff"></a-plane>-->
+    <!--<a-entity wall position="0 0 -4"></a-entity>-->
+    <!--<a-entity material="color: white">-->
+    <!--<a-entity geometry="primitive: box; width: 10; height: 10; depth: 0.5" position="0 0 0" material="color: white"></a-entity>-->
+    <!--<a-entity geometry="primitive: box; width: 10; height: 10; depth: 0.5" position="0 0 10"></a-entity>-->
+    <!--<a-entity geometry="primitive: box; width: 10; height: 10; depth: 0.5" position="0 5 5"-->
+    <!--rotation="90 0 0"></a-entity>-->
+    <!--<a-entity geometry="primitive: box; width: 10; height: 10; depth: 0.5" position="0 -5 5"-->
+    <!--rotation="90 0 0"></a-entity>-->
+    <!--</a-entity>-->
     <a-sky color="#8EBCDE"></a-sky>
 </a-scene>
 </body>
