@@ -2,7 +2,7 @@
 <head>
     <title>My A-Frame Scene</title>
     <script src="aframe.js"></script>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6/angular.min.js"></script>-->
     <script src="primitives/wall.js"></script>
 </head>
 <body>
@@ -13,33 +13,54 @@
         <a-wall position="-5 0 5" rotation="0 90 0"></a-wall>
         <a-wall position="0 5 5" rotation="90 0 0"></a-wall>
         <a-wall position="0 -5 5" rotation="90 0 0"></a-wall>
-        <a-entity>
-            <a-sphere id="blinking-sphere" position="0 0 2" radius="1.5" color="white">
-                <a-animation
-                        attribute="position"
-                        callback="left"
-                        dur="1000"
-                        from="0 0 2" to="-5 0 2">
-                </a-animation>
-                <a-animation
-                        attribute="position"
-                        begin="left"
-                        callback="right"
-                        dur="2000"
-                        from="-5 0 2" to="5 0 2">
-                </a-animation>
-                <a-animation
-                        attribute="position"
-                        begin="right"
-                        callback="left"
-                        dur="2000"
-                        from="5 0 2" to="-5 0 2">
-                </a-animation>
-            </a-sphere>
-        </a-entity>
+        <!--left right sphere-->
+        <a-sphere position="0 0 2" radius="1" color="white">
+            <a-animation
+                    attribute="position"
+                    callback="left"
+                    dur="750"
+                    from="0 0 2" to="-4 0 2">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="left"
+                    callback="right"
+                    dur="1500"
+                    from="-4 0 2" to="4 0 2">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="right"
+                    callback="left"
+                    dur="1500"
+                    from="4 0 2" to="-4 0 2">
+            </a-animation>
+        </a-sphere>
+        <a-sphere position="0 4 2" radius="1" color="white">
+            <a-animation
+                    attribute="position"
+                    callback="down"
+                    dur="1500"
+                    from="0 4 2" to="0 -4 2">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="up"
+                    callback="down"
+                    dur="1500"
+                    from="0 4 2" to="0 -4 2">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="down"
+                    callback="up"
+                    dur="1500"
+                    from="0 -4 2" to="0 4 2">
+            </a-animation>
+        </a-sphere>
     </a-entity>
 
-    <!--<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>-->
+    <!--<a-cylinder position="1 0.75 -3" radius="0.5" height="1" color="#FFC65D"></a-cylinder>-->
     <!--<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>-->
     <!--<a-plane position="0 2 -2" rotation="0 0 0" width="4" height="4" color="#ff00ff"></a-plane>-->
     <!--<a-plane position="0 2 2" rotation="0 0 0" width="4" height="4" color="#ff00ff"></a-plane>-->
