@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>My A-Frame Scene</title>
+    <script type="text/javascript" src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script type="text/javascript" src="https://github.com/ngokevin/aframe-physics-components/blob/master/dist/aframe-physics-components.min.js"></script>
+</head>
+
+<body>
+<a-scene physics-world="gravity: 0 -9.8 0">
+    <a-entity physics-body="boundingBox: 1 1 1; mass: 5; velocity: 0.2 0 0"
+              geometry="primitive: box" material="color: red"></a-entity>
+</a-scene>
+</body>
+</html>
