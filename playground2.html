@@ -8,11 +8,12 @@
     <script src="aframe/aframe.js"></script>
     <script src="primitives/wall.js"></script>
     <script src="aframe/aframe-extras.min.js"></script>
+    <script src="keys.js"></script>
 </head>
 <body>
 <a-scene>
     <!-- Player -->
-    <a-entity camera
+    <a-entity id="player" camera
               universal-controls
               kinematic-body
               jump-ability
@@ -133,17 +134,17 @@
            static-body></a-box>
 
     <!--<a-entity id="platform4" position="-7 13.875 -3.125"-->
-              <!--velocity="0 0 0"-->
-              <!--toggle-velocity="axis: z; min: -9; max: -3.125;" static-body>-->
-        <!--<a-box-->
-                <!--position="0 0 0"-->
-                <!--color="#39BB82"-->
-                <!--width="4" height="0.25" depth="4"-->
-                <!--static-body></a-box>-->
-        <!--<a-box color="#39BB82"-->
-               <!--width="2" height="1" depth="2"-->
-               <!--position="1 0.5 1"-->
-               <!--static-body></a-box>-->
+    <!--velocity="0 0 0"-->
+    <!--toggle-velocity="axis: z; min: -9; max: -3.125;" static-body>-->
+    <!--<a-box-->
+    <!--position="0 0 0"-->
+    <!--color="#39BB82"-->
+    <!--width="4" height="0.25" depth="4"-->
+    <!--static-body></a-box>-->
+    <!--<a-box color="#39BB82"-->
+    <!--width="2" height="1" depth="2"-->
+    <!--position="1 0.5 1"-->
+    <!--static-body></a-box>-->
     <!--</a-entity>-->
 
     <!-- Blocks -->
