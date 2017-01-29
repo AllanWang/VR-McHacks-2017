@@ -6,12 +6,10 @@ window.onload = function () {
     document.onkeypress = function (e) {
         var key = code(e);
         // do something with key
-        switch (key) {
-            case 114:
+        if (String.fromCharCode(key) == 'r') {
                 document.getElementById("player").setAttribute("position", "35 1.764 -35");
                 document.getElementById("platform-start").setAttribute("position", "35 0 -35");
                 document.getElementById("platform-start-second").setAttribute("position", "30 0 -35");
-                break;
         }
     };
 };
