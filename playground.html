@@ -15,7 +15,7 @@
               universal-controls
               kinematic-body
               jump-ability
-              position="10 1.764 0"></a-entity>
+              position="35 1.764 -35"></a-entity>
 
     <!-- Ground -->
     <a-grid static-body></a-grid>
@@ -91,16 +91,16 @@
     <a-box id="platform1"
            color="#39BB82"
            width="4" height="0.25" depth="4"
-           position="7 0.125 -15"
+           position="35 0 -35"
            velocity="0 0 0"
-           toggle-velocity="axis: z; min: -5; max: 5;"
+           toggle-velocity="axis: z; min: -35; max: -25;"
            static-body></a-box>
     <a-box id="platform2"
            color="#39BB82"
            width="4" height="0.25" depth="4"
-           position="-7 0.125 -15"
+           position="30 0 -35"
            velocity="0 0 0"
-           toggle-velocity="axis: y; min: 0.125; max: 5;"
+           toggle-velocity="axis: x; min: 20; max: 30;"
            static-body></a-box>
 
     <!-- Blocks -->
