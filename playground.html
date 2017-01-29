@@ -82,11 +82,25 @@
                static-body></a-box>
 
         <!-- Ramp -->
+		<!-- 
+		Ramp ends at
+			z (depth) = -15+6/2 = -12
+			y (height) = 1 + 8/2 = 5
+			find (y,z) such that
+				y+d/2*sin(45)+h/2*sin(45) = 5
+				z-d/2*cos(45)-h/2*sin(45) = -12
+			So
+				y = -(d+h)/2*sin(45) + 5
+				z = (d+h)/2*cos(45) - 12
+			With d = 15,
+				y = -0.65685424949
+				z = -6.34314575051
+		-->
         <a-box id="ramp"
                color="#39BB82"
-               width="1" height="10" depth="18.86796"
-               position="0 -4.04 -6.33"
-               rotation="30 0 0"
+               width="1" height="1" depth="15"
+               position="0 -0.65685424949 -7.05025253169"
+               rotation="45 0 0"
                static-body></a-box>
     </a-entity>
 
