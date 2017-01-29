@@ -18,6 +18,8 @@
         <a-mixin id="test" material="color: #f0f"></a-mixin>
         <a-mixin id="grey" material="color: #eee"></a-mixin>
         <a-mixin id="platform" geometry="width: 4; height: 0.75; depth: 4" velocity="0 0 0" static-body></a-mixin>
+
+        <img id="sky" src="images/sky.jpg">
     </a-assets>
     <!-- Player -->
     <a-entity id="player" camera
@@ -196,6 +198,8 @@
               dynamic-body></a-sphere>
              -->
 
+    <a-sky src="#sky"></a-sky>
+    <!--<a-sky color="#6EBAA7"></a-sky>-->
     <!-- Lighting -->
     <a-light type="ambient" color="#bbb"></a-light>
     <a-light color="#ccc" position="0 30 0" distance="100" intensity="0.4" type="point"></a-light>
