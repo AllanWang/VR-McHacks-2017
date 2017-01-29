@@ -32,6 +32,11 @@
         <a-wall position="0 0 10" rotation="0 0 90" static-body color="#999"></a-wall>
     </a-entity>
 
+    <!-- Lighting -->
+    <a-light type="ambient" color="#bbb"></a-light>
+    <a-light color="#ccc" position="0 30 0" distance="100" intensity="0.4" type="point"></a-light>
+    <a-light color="#ccc" position="3 10 -10" distance="50" intensity="0.4" type="point"></a-light>
+
     <!-- Tower -->
     <a-box id="tower"
            color="#39BB82"
@@ -84,10 +89,7 @@
               position="15 2 -4"
               dynamic-body></a-sphere>
 
-    <!-- Lighting -->
-    <a-light type="ambient" color="#bbb"></a-light>
-    <a-light color="#ccc" position="0 30 0" distance="100" intensity="0.4" type="point"></a-light>
-    <a-light color="#ccc" position="3 10 -10" distance="50" intensity="0.4" type="point"></a-light>
+
 </a-scene>
 </body>
 </html>
