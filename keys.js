@@ -4,12 +4,12 @@ function code(e) {
 }
 window.onload = function(){
     document.onkeypress = function(e){
-        var key = code(e);
+        var key = e.keyCode;
         // do something with key
         switch (key) {
-            case 114:
+            case 97:
                 console.log("r");
-                document.getElementById("player").setAttribute("position", "10 1.764 0");
+                document.getElementById("player").setAttribute("position", "35 1.764 -35");
                 break;
         }
     };
