@@ -23,14 +23,23 @@
 
     <!--<a-box position="10 0 0" height="20" width="20" depth="20" color="#f0f" static-body></a-box>-->
 
-    <a-entity position="0 4 -5" scale="5 5 5">
-        <a-wall position="5 0 5" rotation="0 90 0" static-body color="#eee"></a-wall>
-        <a-wall position="-5 0 5" rotation="0 90 0" static-body color="#ddd"></a-wall>
-        <a-wall position="0 5 5" rotation="90 0 0" static-body color="#ccc"></a-wall>
-        <a-wall position="0 -5 5" rotation="90 0 0" static-body color="#bbb"></a-wall>
-        <a-wall position="0 0 0" rotation="0 0 90" static-body color="#aaa"></a-wall>
-        <a-wall position="0 0 10" rotation="0 0 90" static-body color="#999"></a-wall>
+    <a-entity>
+        <a-entity position="0 4 -5" scale="5 5 5"
+                  velocity="0 0 0"
+                  toggle-velocity="axis: y; min: -5; max: 5;"   >
+            <a-wall position="5 0 5" rotation="0 90 0" static-body color="#eee"></a-wall>
+            <a-wall position="-5 0 5" rotation="0 90 0" static-body color="#ddd"></a-wall>
+            <a-wall position="0 5 5" rotation="90 0 0" static-body color="#ccc"></a-wall>
+            <a-wall position="0 -5 5" rotation="90 0 0" static-body color="#bbb"></a-wall>
+            <a-wall position="0 0 0" rotation="0 0 90" static-body color="#aaa"></a-wall>
+            <a-wall position="0 0 10" rotation="0 0 90" static-body color="#999"></a-wall>
+        </a-entity>
     </a-entity>
+
+    <!-- Lighting -->
+    <a-light type="ambient" color="#bbb"></a-light>
+    <a-light color="#ccc" position="0 30 0" distance="100" intensity="0.4" type="point"></a-light>
+    <a-light color="#ccc" position="3 10 -10" distance="50" intensity="0.4" type="point"></a-light>
 
     <!-- Tower -->
     <a-box id="tower"
@@ -84,10 +93,7 @@
               position="15 2 -4"
               dynamic-body></a-sphere>
 
-    <!-- Lighting -->
-    <a-light type="ambient" color="#bbb"></a-light>
-    <a-light color="#ccc" position="0 30 0" distance="100" intensity="0.4" type="point"></a-light>
-    <a-light color="#ccc" position="3 10 -10" distance="50" intensity="0.4" type="point"></a-light>
+
 </a-scene>
 </body>
 </html>
