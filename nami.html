@@ -11,6 +11,7 @@
 </head>
 <body>
 <a-scene>
+
     <!-- Player -->
     <a-entity camera
               universal-controls
@@ -31,10 +32,13 @@
         <a-wall position="0 0 5" rotation="90 0 0" static-body></a-wall>
         <a-wall position="5 5 5" rotation="0 90 0" static-body></a-wall>
         <a-wall position="-5 5 5" rotation="0 90 0" static-body></a-wall>
-        <a-animation attribute="rotation"
-                     dur="10000"
+
+
+
+        <a-animation attribute="position"
+                     dur="20000"
                      fill="forwards"
-                     to="0 360 0"
+                     to="0 20 0"
                      repeat="indefinite"></a-animation>
     </a-entity>
     <a-sky color="white"></a-sky>
