@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
+    <title>Examples • Playground</title>
+    <script src="aframe/aframe.js"></script>
+</head>
+<body>
+<a-scene>
+
+    <!--Hollow Box -->
+    <a-entity position="0 0 -10">
+        <a-box height="0.2" width="10" depth="10" position="0 -4.9 0"></a-box>
+        <a-box height="0.2" width="10" depth="10" position="0 4.9 0"></a-box>
+        <a-box height="10" width="0.2" depth="10" position="4.9 0 0"></a-box>
+        <a-box height="10" width="0.2" depth="10" position="-4.9 0 0"></a-box>
+        <!--left right sphere-->
+        <a-sphere position="0 0 0" radius="1" color="#eee" static-body>
+            <a-animation
+                    attribute="position"
+                    callback="left"
+                    dur="750"
+                    from="0 0 0" to="-3.8 0 0">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="left"
+                    callback="right"
+                    dur="1500"
+                    from="-3.8 0 0" to="3.8 0 0">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="right"
+                    callback="left"
+                    dur="1500"
+                    from="3.8 0 0" to="-3.8 0 0">
+            </a-animation>
+        </a-sphere>
+        <a-sphere position="0 3.8 0" radius="1" color="#eee" static-body>
+            <a-animation
+                    attribute="position"
+                    callback="down"
+                    dur="1500"
+                    from="0 3.8 0" to="0 -3.8 0">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="up"
+                    callback="down"
+                    dur="1500"
+                    from="0 3.8 0" to="0 -3.8 0">
+            </a-animation>
+            <a-animation
+                    attribute="position"
+                    begin="down"
+                    callback="up"
+                    dur="1500"
+                    from="0 -3.8 0" to="0 3.8 0">
+            </a-animation>
+        </a-sphere>
+    </a-entity>
+    <a-sky color="#8EBCDE"></a-sky>
+</a-scene>
+</body>
+</html>
