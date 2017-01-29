@@ -2,26 +2,33 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
-    <title>My A-Frame Scene</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
+    <title>Examples • Playground</title>
     <script src="aframe/aframe.js"></script>
-    <!--<script src="aframe/aframe-extras.min.js"></script>-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6/angular.min.js"></script>-->
     <script src="primitives/wall.js"></script>
+    <script src="aframe/aframe-extras.min.js"></script>
+    <script src="keys.js"></script>
 </head>
 <body>
 <a-scene>
-    <!--bring forward into view at beginning-->
-    <a-entity position="0 4 -5">
-        <a-wall position="5 0 5" rotation="0 90 0"></a-wall>
-        <a-wall position="-5 0 5" rotation="0 90 0"></a-wall>
-        <a-wall position="0 5 5" rotation="90 0 0"></a-wall>
-        <a-wall position="0 -5 5" rotation="90 0 0"></a-wall>
-        <a-wall position="0 0 0" rotation="0 0 90" static-body></a-wall>
-        <a-wall position="0 0 10" rotation="0 0 90" static-body></a-wall>
-        <!--<a-wall position="5 5 0" rotation="0 0 90" static-body></a-wall>-->
+    <!-- Player -->
+    <a-entity id="player" camera
+              universal-controls
+              kinematic-body
+              jump-ability
+              position="35 1.764 -35"></a-entity>
+
+    <!-- Ground -->
+    <a-grid static-body></a-grid>
+
+    <a-entity position="10 5 -25">
+        <a-wall position="5 0 5" rotation="0 90 0" static-body></a-wall>
+        <a-wall position="-5 0 5" rotation="0 90 0" static-body></a-wall>
+        <a-wall position="0 5 5" rotation="90 0 0" static-body></a-wall>
+        <a-wall position="0 -5 5" rotation="90 0 0" static-body></a-wall>
         <!--left right sphere-->
-        <a-sphere position="0 0 2" radius="1" color="white">
+        <a-sphere position="0 0 2" radius="1" color="#eee" static-body>
             <a-animation
                     attribute="position"
                     callback="left"
@@ -43,7 +50,7 @@
                     from="4 0 2" to="-4 0 2">
             </a-animation>
         </a-sphere>
-        <a-sphere position="0 4 2" radius="1" color="white">
+        <a-sphere position="0 4 2" radius="1" color="#eee" static-body>
             <a-animation
                     attribute="position"
                     callback="down"
@@ -67,20 +74,104 @@
         </a-sphere>
     </a-entity>
 
-    <!--<a-cylinder position="1 0.75 -3" radius="0.5" height="1" color="#FFC65D"></a-cylinder>-->
-    <!--<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>-->
-    <!--<a-plane position="0 2 -2" rotation="0 0 0" width="4" height="4" color="#ff00ff"></a-plane>-->
-    <!--<a-plane position="0 2 2" rotation="0 0 0" width="4" height="4" color="#ff00ff"></a-plane>-->
-    <!--<a-entity wall position="0 0 -4"></a-entity>-->
-    <!--<a-entity material="color: white">-->
-    <!--<a-entity geometry="primitive: box; width: 10; height: 10; depth: 0.5" position="0 0 0" material="color: white"></a-entity>-->
-    <!--<a-entity geometry="primitive: box; width: 10; height: 10; depth: 0.5" position="0 0 10"></a-entity>-->
-    <!--<a-entity geometry="primitive: box; width: 10; height: 10; depth: 0.5" position="0 5 5"-->
-    <!--rotation="90 0 0"></a-entity>-->
-    <!--<a-entity geometry="primitive: box; width: 10; height: 10; depth: 0.5" position="0 -5 5"-->
-    <!--rotation="90 0 0"></a-entity>-->
+    <a-entity position="0 2 0">
+        <!-- Tower -->
+        <a-box id="tower"
+               color="#39BB82"
+               width="10" height="8" depth="6"
+               position="0 1 -15"
+               static-body></a-box>
+
+        <!-- Ramp -->
+        <a-box id="ramp"
+               color="#39BB82"
+               width="1" height="10" depth="18.86796"
+               position="0 -4.04 -6.33"
+               rotation="30 0 0"
+               static-body></a-box>
+    </a-entity>
+
+    <!-- Moving platforms -->
+    <a-box id="platform1"
+           color="#39BB82"
+           width="4" height="0.25" depth="4"
+           position="7 0.125 -15"
+           velocity="0 0 0"
+           toggle-velocity="axis: z; min: -5; max: 5;"
+           static-body></a-box>
+    <a-box id="platform2"
+           color="#39BB82"
+           width="4" height="0.25" depth="4"
+           position="-7 0.125 -15"
+           velocity="0 0 0"
+           toggle-velocity="axis: y; min: 0.125; max: 6;"
+           static-body></a-box>
+    <a-box id="platform3"
+           color="#39BB82"
+           width="4" height="0.25" depth="4"
+           position="-7 8 -15"
+           velocity="0 0 0"
+           toggle-velocity="axis: y; min: 8; max: 13.875;"
+           static-body></a-box>
+    <a-box id="platform4"
+           color="#39BB82"
+           width="4" height="0.25" depth="4"
+           position="-7 13.875 -3.125"
+           velocity="0 0 0"
+           toggle-velocity="axis: z; min: -9; max: -3.125;"
+           static-body></a-box>
+    <a-box color="#39BB82"
+           width="2" height="1" depth="2"
+           position="-6 14.375 -2.125"
+           dynamic-body></a-box>
+
+    <a-box id="platform5"
+           color="#39BB82"
+           width="4" height="0.25" depth="4"
+           position="-7 12.875 2.5"
+           velocity="0 0 0"
+           toggle-velocity="axis: x; min: -7; max: -1.125;"
+           static-body></a-box>
+
+    <!--<a-entity id="platform4" position="-7 13.875 -3.125"-->
+    <!--velocity="0 0 0"-->
+    <!--toggle-velocity="axis: z; min: -9; max: -3.125;" static-body>-->
+    <!--<a-box-->
+    <!--position="0 0 0"-->
+    <!--color="#39BB82"-->
+    <!--width="4" height="0.25" depth="4"-->
+    <!--static-body></a-box>-->
+    <!--<a-box color="#39BB82"-->
+    <!--width="2" height="1" depth="2"-->
+    <!--position="1 0.5 1"-->
+    <!--static-body></a-box>-->
     <!--</a-entity>-->
-    <a-sky color="#8EBCDE"></a-sky>
+
+    <!-- Blocks -->
+    <a-box color="#39BB82"
+           width="1" height="1" depth="1"
+           position="15 2 0.6"
+           dynamic-body></a-box>
+    <a-box color="#39BB82"
+           width="1" height="1" depth="1"
+           position="15 2 -0.6"
+           dynamic-body></a-box>
+    <a-box color="#39BB82"
+           width="1" height="1" depth="1"
+           position="15 4 0"
+           dynamic-body></a-box>
+    <a-cylinder color="#39BB82"
+                rotation="90 0 0"
+                position="15 2 4"
+                dynamic-body></a-cylinder>
+    <a-sphere color="#39BB82"
+              position="15 2 -4"
+              dynamic-body></a-sphere>
+
+    <!-- Lighting -->
+    <a-light type="ambient" color="#bbb"></a-light>
+    <a-light color="#ccc" position="0 30 0" distance="100" intensity="0.4" type="point"></a-light>
+    <a-light color="#ccc" position="3 10 -10" distance="50" intensity="0.4" type="point"></a-light>
 </a-scene>
 </body>
 </html>
