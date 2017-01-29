@@ -23,13 +23,17 @@
 
     <!--<a-box position="10 0 0" height="20" width="20" depth="20" color="#f0f" static-body></a-box>-->
 
-    <a-entity position="0 4 -5" scale="5 5 5">
-        <a-wall position="5 0 5" rotation="0 90 0" static-body color="#eee"></a-wall>
-        <a-wall position="-5 0 5" rotation="0 90 0" static-body color="#ddd"></a-wall>
-        <a-wall position="0 5 5" rotation="90 0 0" static-body color="#ccc"></a-wall>
-        <a-wall position="0 -5 5" rotation="90 0 0" static-body color="#bbb"></a-wall>
-        <a-wall position="0 0 0" rotation="0 0 90" static-body color="#aaa"></a-wall>
-        <a-wall position="0 0 10" rotation="0 0 90" static-body color="#999"></a-wall>
+    <a-entity>
+        <a-entity position="0 4 -5" scale="5 5 5"
+                  velocity="0 0 0"
+                  toggle-velocity="axis: y; min: -5; max: 5;"   >
+            <a-wall position="5 0 5" rotation="0 90 0" static-body color="#eee"></a-wall>
+            <a-wall position="-5 0 5" rotation="0 90 0" static-body color="#ddd"></a-wall>
+            <a-wall position="0 5 5" rotation="90 0 0" static-body color="#ccc"></a-wall>
+            <a-wall position="0 -5 5" rotation="90 0 0" static-body color="#bbb"></a-wall>
+            <a-wall position="0 0 0" rotation="0 0 90" static-body color="#aaa"></a-wall>
+            <a-wall position="0 0 10" rotation="0 0 90" static-body color="#999"></a-wall>
+        </a-entity>
     </a-entity>
 
     <!-- Lighting -->
