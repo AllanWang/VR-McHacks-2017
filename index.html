@@ -8,6 +8,7 @@
     <script src="aframe/aframe.js"></script>
     <script src="primitives/wall.js"></script>
     <script src="aframe/aframe-extras.min.js"></script>
+    <script src="aframe/aframe-sun-sky.min.js"></script>
     <script src="keys.js"></script>
 </head>
 <body>
@@ -30,7 +31,7 @@
               position="35 2 -35"></a-entity>
 
     <!-- Ground -->
-    <!--<a-grid static-body position="0 -5 0"></a-grid>-->
+    <!--<a-grid static-body position="0 0 0"></a-grid>-->
     <a-ocean mixin="ocean" width="100" depth="100" density="60" speed="2" position="0 -0.15 0"></a-ocean>
 
     <!--Hollow square-->
@@ -165,9 +166,9 @@
                 toggle-velocity="axis: z; min: -9; max: -3.125;"
         ></a-box>
         <!--<a-box mixin="green"-->
-               <!--width="2" height="1" depth="2"-->
-               <!--position="-6 14.375 -2.125"-->
-               <!--dynamic-body></a-box>-->
+        <!--width="2" height="1" depth="2"-->
+        <!--position="-6 14.375 -2.125"-->
+        <!--dynamic-body></a-box>-->
         <!--last platform-->
         <a-box
                 mixin="ocean platform"
@@ -198,12 +199,13 @@
               dynamic-body></a-sphere>
              -->
 
-    <a-sky src="#sky"></a-sky>
-    <!--<a-sky color="#6EBAA7"></a-sky>-->
+    <!--<a-sky src="#sky" color="#6EBAA7"></a-sky>-->
+    <a-sun-sky material="sunPosition: 0 30 0"></a-sun-sky>
     <!-- Lighting -->
     <a-light type="ambient" color="#bbb"></a-light>
-    <a-light color="#ccc" position="0 30 0" distance="100" intensity="0.4" type="point"></a-light>
-    <a-light color="#ccc" position="3 10 -10" distance="50" intensity="0.4" type="point"></a-light>
+    <a-sphere color="white" radius="1" position="0 30 0" material="shader: flat"></a-sphere>
+    <a-light color="#ccc" position="0 30 0" distance="100" intensity="0.6" type="point"></a-light>
+    <!--<a-light color="#ccc" position="3 15 -10" distance="50" intensity="0.4" type="point"></a-light>-->
 </a-scene>
 </body>
 
