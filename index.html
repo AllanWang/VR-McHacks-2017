@@ -1,18 +1,25 @@
 <html>
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
     <title>My A-Frame Scene</title>
-    <script src="aframe.js"></script>
+    <script src="aframe/aframe.js"></script>
+    <!--<script src="aframe/aframe-extras.min.js"></script>-->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6/angular.min.js"></script>-->
     <script src="primitives/wall.js"></script>
 </head>
 <body>
 <a-scene>
     <!--bring forward into view at beginning-->
-    <a-entity position="0 0 -20">
+    <a-entity position="0 4 -5">
         <a-wall position="5 0 5" rotation="0 90 0"></a-wall>
         <a-wall position="-5 0 5" rotation="0 90 0"></a-wall>
         <a-wall position="0 5 5" rotation="90 0 0"></a-wall>
         <a-wall position="0 -5 5" rotation="90 0 0"></a-wall>
+        <a-wall position="0 0 0" rotation="0 0 90" static-body></a-wall>
+        <a-wall position="0 0 10" rotation="0 0 90" static-body></a-wall>
+        <!--<a-wall position="5 5 0" rotation="0 0 90" static-body></a-wall>-->
         <!--left right sphere-->
         <a-sphere position="0 0 2" radius="1" color="white">
             <a-animation

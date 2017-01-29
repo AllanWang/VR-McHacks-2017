@@ -1,0 +1,23 @@
+{
+  "name": "McHacks-VR",
+  "version": "1.0",
+  "dependencies": {
+    "aframe": "^0.4.1",
+    "aframe-extras": "^3.2.2",
+    "aframe-physics-system": "^1.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllanWang/VR-McHacks-2017.git"
+  },
+  "keywords": [
+    "McHacks",
+    "VR"
+  ],
+  "author": "Allan, Nami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AllanWang/VR-McHacks-2017/issues"
+  },
+  "homepage": "https://github.com/AllanWang/VR-McHacks-2017#readme"
+}
