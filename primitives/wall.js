@@ -10,7 +10,7 @@ AFRAME.registerPrimitive('a-wall', extendDeep({}, meshMixin, {
             width: "10",
             depth: "0.2"
         },
-        material: {color: "#eee"}
+        material: {color: "grey"}
     },
     // Maps HTML attributes to his ocean component's properties.
     mappings: {
