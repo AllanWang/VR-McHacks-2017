@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>My A-Frame Scene</title>
+    <script type="text/javascript" src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.2.2/dist/aframe-extras.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="primitives/wall.js"></script>
+</head>
+<body>
+<a-scene physics-world="gravity: 0 -9.8 0">
+    <a-entity>z
+        <a-sphere dynamic-body position="0 -4 2" color="yellow" radius="1"></a-sphere>
+        <a-wall position="0 0 0"></a-wall>
+        <a-wall position="0 0 10"></a-wall>
+        <a-wall position="0 5 5" rotation="90 0 0"></a-wall>
+        <a-wall position="0 -5 5" rotation="90 0 0"></a-wall>
+    </a-entity>
+    <a-sky color="white"></a-sky>
+</a-scene>
+</body>
+</html>
