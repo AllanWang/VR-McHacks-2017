@@ -19,14 +19,16 @@
               position="35 1.764 -35"></a-entity>
 
     <!-- Ground -->
-    <a-grid static-body></a-grid>
+    <!--<a-grid static-body></a-grid>-->
 
+    <!--Hollow Box -->
     <a-entity position="10 5 -25">
         <a-wall position="5 0 5" rotation="0 90 0" static-body></a-wall>
         <a-wall position="-5 0 5" rotation="0 90 0" static-body></a-wall>
         <a-wall position="0 5 5" rotation="90 0 0" static-body></a-wall>
         <a-wall position="0 -5 5" rotation="90 0 0" static-body></a-wall>
-        <!--left right sphere-->
+
+        <!--Left Right Sphere-->
         <a-sphere position="0 0 2" radius="1" color="white" static-body>
             <a-animation
                     attribute="position"
@@ -49,6 +51,8 @@
                     from="4 0 2" to="-4 0 2">
             </a-animation>
         </a-sphere>
+
+        <!--Up Down Sphere-->
         <a-sphere position="0 4 2" radius="1" color="white" static-body>
             <a-animation
                     attribute="position"
@@ -103,7 +107,25 @@
            width="4" height="0.25" depth="4"
            position="30 0 -35"
            velocity="0 0 0"
-           toggle-velocity="axis: x; min: 20; max: 30;"
+           toggle-velocity="axis: x; min: 23.5; max: 30;"
+           static-body></a-box>
+
+    <!-- Ramp -->
+    <a-box id="ramp"
+           color="#39BB82"
+           width="1" height="5" depth="11.4"
+           position="15 0 -35"
+           rotation="20 90 0"
+           static-body></a-box>
+    <a-box id="ramp"
+           color="#39BB82"
+           width="1" height="5" depth="11.4"
+           position="10 0 -30"
+           rotation="20 0 0"
+           static-body></a-box>
+    <a-box color="#39BB82"
+           width="1" height="8.6" depth="1"
+           position="10 0 -35"
            static-body></a-box>
 
     <!-- Blocks -->
