@@ -6,8 +6,8 @@ AFRAME.registerPrimitive('a-wall', extendDeep({}, meshMixin, {
     defaultComponents: {
         geometry: {
             primitive: 'box',
-            height: "10",
-            width: "10",
+            height: "10.2",
+            width: "10.2",
             depth: "0.2"
         },
         material: {color: "#39BB82"}
